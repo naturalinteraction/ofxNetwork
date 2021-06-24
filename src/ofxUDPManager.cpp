@@ -105,8 +105,8 @@ bool ofxUDPManager::Create()
 	m_hSocket =	socket(AF_INET,	SOCK_DGRAM,	0);
 	if (m_hSocket != INVALID_SOCKET)
 	{
-        // int one = 1;
-        // setsockopt(m_hSocket, SOL_TCP, TCP_NODELAY, &one, sizeof(one));
+        int one = 1;
+        setsockopt(m_hSocket, SOL_TCP, TCP_NODELAY, &one, sizeof(one));
 
 		int unused = true;
 		setsockopt(m_hSocket, SOL_SOCKET, SO_REUSEADDR, (char*)&unused, sizeof(unused));
