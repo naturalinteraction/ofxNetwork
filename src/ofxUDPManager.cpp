@@ -105,9 +105,10 @@ bool ofxUDPManager::Create()
 	m_hSocket =	socket(AF_INET,	SOCK_DGRAM,	0);
 	if (m_hSocket != INVALID_SOCKET)
 	{
+#ifdef __linux__
         int one = 1;
         setsockopt(m_hSocket, SOL_TCP, TCP_NODELAY, &one, sizeof(one));
-
+#endif
 		int unused = true;
 		setsockopt(m_hSocket, SOL_SOCKET, SO_REUSEADDR, (char*)&unused, sizeof(unused));
 		#ifdef __APPLE__   // MacOS/X requires an additional call
