@@ -30,7 +30,7 @@ ofxTCPManager::ofxTCPManager()
   m_dwTimeoutSend= OF_TCP_DEFAULT_TIMEOUT;
   m_dwTimeoutReceive= OF_TCP_DEFAULT_TIMEOUT;
   m_dwTimeoutAccept= OF_TCP_DEFAULT_TIMEOUT;
-  m_dwTimeoutConnect= 5;//OF_TCP_DEFAULT_TIMEOUT;
+  m_dwTimeoutConnect= 1;//OF_TCP_DEFAULT_TIMEOUT;
   m_iListenPort= -1;
   m_closing = false;
   m_iMaxConnections = 100;

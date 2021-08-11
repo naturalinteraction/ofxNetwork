@@ -36,6 +36,7 @@ bool ofxTCPClient::setup(string ip, int _port, bool blocking){
 
 	ofxTCPSettings settings(ip, _port);
 
+	settings.reuse = true;
 	settings.blocking = blocking;
 
 	return setup(settings);
